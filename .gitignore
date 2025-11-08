@@ -1,0 +1,21 @@
+# Fichiers de log
+logs
+*.log
+npm-debug.log*
+
+# Dossiers de dépendances (le plus important)
+node_modules/
+
+# Fichiers d'environnement (contient les secrets)
+.env
+
+# Fichiers de build
+/build
+/dist
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Cache Angular
+.angular/
