@@ -1,21 +1,25 @@
-import { Injectable } from "@angular/core";
-
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs'; 
 
 @Injectable({
-    providedIn: 'root'
-
+  providedIn: 'root'
 })
-export class UserService{
-    private apiURL = 'http://localhost:3333/users';
+export class UserService {
 
 
-    constructor(private http: HttpClient){}
+  private apiUrl = 'http://localhost:3333/users';
 
-    
-    
-    getUsers(): Observable<any[]>{
-        return this.http.get<any[]>(this.apiURL);
-    }
-    }
+  constructor(private http: HttpClient) { }
+
+  
+
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+
+  addUser(user: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, user);
+  }
+}
