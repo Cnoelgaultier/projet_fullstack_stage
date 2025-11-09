@@ -1,1 +1,41 @@
-<p>user-form works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="space-y-4">
+
+  <div>
+    <label for="name" class="block font-medium">Nom</label>
+    <input 
+      id="name" 
+      type="text" 
+      formControlName="name" 
+      class="w-full border p-2 rounded mt-1"
+    >
+  </div>
+
+ 
+
+  <div>
+    <label for="email" class="block font-medium">Email</label>
+    <input 
+      id="email" 
+      type="email" 
+      formControlName="email" 
+      class="w-full border p-2 rounded mt-1"
+    >
+  </div>
+
+  <div>
+    <label for="role" class="block font-medium">Rôle</label>
+    <input 
+      id="role" 
+      type="text" 
+      formControlName="role" 
+      class="w-full border p-2 rounded mt-1"
+    >
+  </div>
+
+  <div>
+    <button type="submit" class="w-full bg-blue-500 text-white font-bold p-2 rounded hover:bg-blue-700">
+      Enregistrer l'utilisateur
+    </button>
+  </div>
+
+</form>

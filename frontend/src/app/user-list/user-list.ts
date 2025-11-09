@@ -16,8 +16,8 @@ import { UserService } from '../user.service';
 export class UserList implements OnInit {
 
   users: any[] = [
-    { id: 1, name: 'Dupont', firstname: 'Alice', email: 'alice.test@email.com', role: 'Admin' },
-    { id: 2, name: 'Martin', firstname: 'Bob', email: 'bob.test@email.com', role: 'User' },
+    { id: 1, name: 'Dupont', email: 'alice.test@email.com', role: 'Admin' },
+    { id: 2, name: 'Martin', email: 'bob.test@email.com', role: 'User' },
   ];
   public showAddForm: boolean = false;
  
