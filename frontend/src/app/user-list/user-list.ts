@@ -15,10 +15,14 @@ import { UserService } from '../user.service';
 
 export class UserList implements OnInit {
 
-  users: any[] = [
+  masterUsers: any[] = [
     { id: 1, name: 'Dupont', email: 'alice.test@email.com', role: 'Admin' },
     { id: 2, name: 'Martin', email: 'bob.test@email.com', role: 'User' },
   ];
+
+  displayedUsers: any[] = [];
+
+
   public showAddForm: boolean = false;
  
   constructor(private userService: UserService) {}
@@ -27,7 +31,8 @@ export class UserList implements OnInit {
     
     this.userService.getUsers().subscribe( (data: any) => {
       
-      this.users = data;
+      this.masterUsers = data;
+      this.displayedUsers = data;
     });
 
     
@@ -36,6 +41,18 @@ export class UserList implements OnInit {
   toggleAddForm(): void {
   
   this.showAddForm = !this.showAddForm; 
+}
+
+onSearch(event: any): void {
+  
+  const searchTerm = event.target.value.toLowerCase();
+
+  
+  this.displayedUsers = this.masterUsers.filter( (user) => {
+
+    
+    return user.name.toLowerCase().includes(searchTerm);
+  });
 }
 
   
